@@ -179,21 +179,12 @@ module.exports = {
                         const pathName = p[1];
 
                         // Generate RESTful API. More info http://www.restapitutorial.com/
-                        console.log(" ===================== %s", `GET ${pathName}/:id`);
 
                         paths = objectAssignDeep(paths, createPath(`GET ${pathName}/:id`));
                         paths = objectAssignDeep(paths, createPath(`POST ${pathName}`));
                         paths = objectAssignDeep(paths, createPath(`PUT ${pathName}/:id`));
                         paths = objectAssignDeep(paths, createPath(`PATCH ${pathName}/:id`));
                         paths = objectAssignDeep(paths, createPath(`DELETE ${pathName}/:id`));
-
-                        // Object.assign(paths, createPath(`GET ${pathName}/:id`));
-                        // Object.assign(paths, createPath(`POST ${pathName}`));
-                        // Object.assign(paths, createPath(`PUT ${pathName}/:id`));
-                        // Object.assign(paths, createPath(`PATCH ${pathName}/:id`));
-                        // Object.assign(paths, createPath(`DELETE ${pathName}/:id`));
-
-                        console.log("Final ======== %s", JSON.stringify(paths, null, 4));
                     } else {
                         Object.assign(paths, createPath(matchPath));
                     }
